@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#1C315E"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Kalkulator"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/container"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginTop="48dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:background="@drawable/container_recycle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/number1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edit_text"
+            android:ems="10"
+            android:hint="Input Number 1"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+        <RadioGroup
+            android:id="@+id/group"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number1">
+
+            <RadioButton
+                android:id="@+id/tambah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tambah"
+                app:layout_constraintEnd_toEndOf="@+id/number1"
+                app:layout_constraintStart_toStartOf="@+id/number1"
+                app:layout_constraintTop_toBottomOf="@+id/number1"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/kurang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Kurang"
+                app:layout_constraintEnd_toEndOf="@+id/number1"
+                app:layout_constraintStart_toStartOf="@+id/number1"
+                app:layout_constraintTop_toBottomOf="@+id/number1"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/kali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Kali"
+                app:layout_constraintEnd_toEndOf="@+id/tambah"
+                app:layout_constraintStart_toStartOf="@+id/tambah"
+                app:layout_constraintTop_toBottomOf="@+id/tambah"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/bagi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bagi"
+                app:layout_constraintEnd_toEndOf="@+id/kurang"
+                app:layout_constraintStart_toStartOf="@+id/kurang"
+                app:layout_constraintTop_toBottomOf="@+id/kurang"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/number2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text"
+            android:ems="10"
+            android:hint="Input Number 2"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/group" />
+
+        <Button
+            android:id="@+id/insert"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/container_recycle"
+            android:text="Hitung"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/number2"
+            app:layout_constraintStart_toStartOf="@+id/number2"
+            app:layout_constraintTop_toBottomOf="@+id/number2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
